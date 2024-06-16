@@ -71,5 +71,17 @@ local plugins = {
       require "custom.configs.rustaceanvim"
     end
   },
+  {
+    'topaxi/gh-actions.nvim',
+    cmd = 'GhActions',
+    keys = {
+      { '<leader>gh', '<cmd>GhActions<cr>', desc = 'Open Github Actions' },
+    },
+    dependencies = { 'nvim-lua/plenary.nvim', 'MunifTanjim/nui.nvim' },
+    opts = {},
+    config = function(_, opts)
+      require('gh-actions').setup(opts)
+    end,
+  },
 }
 return plugins
