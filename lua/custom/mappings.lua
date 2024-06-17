@@ -55,7 +55,11 @@ M.gopher = {
     ["<leader>gsy"] = {
       "<cmd> GoTagAdd yaml <CR>",
       "Add yaml struct tags"
-    }
+    },
+    ["<leader>gie"] = {
+      "<cmd> GoIfErr <CR>",
+      "Add if err != nil"
+    },
   }
 }
 
