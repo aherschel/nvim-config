@@ -22,6 +22,9 @@ vim.g.rustaceanvim = {
     on_attach = on_attach,
     capabilities = capabilities,
   },
+  tools = {
+    test_executor = 'background',
+  },
   dap = {
     adapter = cfg.get_codelldb_adapter(codelldb_path, liblldb_path),
   },
