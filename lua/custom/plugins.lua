@@ -86,7 +86,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = "go",
+    ft = {"go", "roc"},
     opts = function()
       return require "custom.configs.null-ls"
     end,
@@ -110,6 +110,16 @@ local plugins = {
     build = function()
       vim.cmd [[silent! GoInstallDeps]]
     end,
+  },
+  {
+    "ChrisWellsWood/roc.vim",
+    ft = {"roc"},
+    config = function()
+      vim.lsp.start({
+        name = "roc_ls",
+        cmd = {"roc_language_server"},
+      })
+    end
   },
 }
 return plugins
